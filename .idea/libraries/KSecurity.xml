@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="KSecurity">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/src/KSecurity" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/src/KSecurity" recursive="false" />
+  </library>
+</component>

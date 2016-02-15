@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_formulaone" default="compile.module.formulaone">
+  <dirname property="module.formulaone.basedir" file="${ant.file.module_formulaone}"/>
+  
+  <property name="module.jdk.home.formulaone" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.formulaone" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.formulaone" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.formulaone" value="-encoding UTF-8 -source 1.6 -target 1.6 ${compiler.args}"/>
+  
+  <property name="formulaone.output.dir" value="${module.formulaone.basedir}/out/production/FormulaOne"/>
+  <property name="formulaone.testoutput.dir" value="${module.formulaone.basedir}/out/test/FormulaOne"/>
+  
+  <path id="formulaone.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="formulaone.module.production.classpath">
+    <path refid="${module.jdk.classpath.formulaone}"/>
+    <path refid="library.mysql-connector-java-5.1.38-bin.classpath"/>
+    <path refid="library.bcrypt.classpath"/>
+    <path refid="library.taglibs-standard-impl-1.2.5.classpath"/>
+    <path refid="library.taglibs-standard-jstlel-1.2.5.classpath"/>
+    <path refid="library.taglibs-standard-spec-1.2.5.classpath"/>
+    <path refid="library.mysql-connector-java-5.1.38-bin_(2).classpath"/>
+    <path refid="library.jfreechart-1.0.19.classpath"/>
+    <path refid="library.jcommon-1.0.23.classpath"/>
+    <path refid="library.phash.classpath"/>
+    <path refid="library.ksecurity.classpath"/>
+  </path>
+  
+  <path id="formulaone.runtime.production.module.classpath">
+    <pathelement location="${formulaone.output.dir}"/>
+    <path refid="library.mysql-connector-java-5.1.38-bin.classpath"/>
+    <path refid="library.bcrypt.classpath"/>
+    <path refid="library.taglibs-standard-impl-1.2.5.classpath"/>
+    <path refid="library.taglibs-standard-jstlel-1.2.5.classpath"/>
+    <path refid="library.taglibs-standard-spec-1.2.5.classpath"/>
+    <path refid="library.mysql-connector-java-5.1.38-bin_(2).classpath"/>
+    <path refid="library.jfreechart-1.0.19.classpath"/>
+    <path refid="library.jcommon-1.0.23.classpath"/>
+    <path refid="library.phash.classpath"/>
+    <path refid="library.ksecurity.classpath"/>
+  </path>
+  
+  <path id="formulaone.module.classpath">
+    <path refid="${module.jdk.classpath.formulaone}"/>
+    <pathelement location="${formulaone.output.dir}"/>
+    <path refid="library.mysql-connector-java-5.1.38-bin.classpath"/>
+    <path refid="library.bcrypt.classpath"/>
+    <path refid="library.taglibs-standard-impl-1.2.5.classpath"/>
+    <path refid="library.taglibs-standard-jstlel-1.2.5.classpath"/>
+    <path refid="library.taglibs-standard-spec-1.2.5.classpath"/>
+    <path refid="library.mysql-connector-java-5.1.38-bin_(2).classpath"/>
+    <path refid="library.jfreechart-1.0.19.classpath"/>
+    <path refid="library.jcommon-1.0.23.classpath"/>
+    <path refid="library.phash.classpath"/>
+    <path refid="library.ksecurity.classpath"/>
+  </path>
+  
+  <path id="formulaone.runtime.module.classpath">
+    <pathelement location="${formulaone.testoutput.dir}"/>
+    <pathelement location="${formulaone.output.dir}"/>
+    <path refid="library.mysql-connector-java-5.1.38-bin.classpath"/>
+    <path refid="library.bcrypt.classpath"/>
+    <path refid="library.taglibs-standard-impl-1.2.5.classpath"/>
+    <path refid="library.taglibs-standard-jstlel-1.2.5.classpath"/>
+    <path refid="library.taglibs-standard-spec-1.2.5.classpath"/>
+    <path refid="library.mysql-connector-java-5.1.38-bin_(2).classpath"/>
+    <path refid="library.jfreechart-1.0.19.classpath"/>
+    <path refid="library.jcommon-1.0.23.classpath"/>
+    <path refid="library.phash.classpath"/>
+    <path refid="library.ksecurity.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.formulaone">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.formulaone">
+    <patternset refid="excluded.from.module.formulaone"/>
+  </patternset>
+  
+  <path id="formulaone.module.sourcepath">
+    <dirset dir="${module.formulaone.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.formulaone" depends="compile.module.formulaone.production,compile.module.formulaone.tests" description="Compile module FormulaOne"/>
+  
+  <target name="compile.module.formulaone.production" depends="register.custom.compilers" description="Compile module FormulaOne; production classes">
+    <mkdir dir="${formulaone.output.dir}"/>
+    <javac2 destdir="${formulaone.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.formulaone}/javac">
+      <compilerarg line="${compiler.args.formulaone}"/>
+      <bootclasspath refid="formulaone.module.bootclasspath"/>
+      <classpath refid="formulaone.module.production.classpath"/>
+      <src refid="formulaone.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.formulaone"/>
+    </javac2>
+    
+    <copy todir="${formulaone.output.dir}">
+      <fileset dir="${module.formulaone.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.formulaone.tests" depends="register.custom.compilers,compile.module.formulaone.production" description="compile module FormulaOne; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.formulaone" description="cleanup module">
+    <delete dir="${formulaone.output.dir}"/>
+    <delete dir="${formulaone.testoutput.dir}"/>
+  </target>
+</project>

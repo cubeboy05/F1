@@ -1,0 +1,231 @@
+
+@font-face {
+    font-family: KenzoCustom;
+    src: url('../fonts/kenzo-regular.otf');
+}
+
+body{
+    background-color: #1a3278;
+    font-family: KenzoCustom, serif;
+}
+
+.formClass{
+    max-width: 350px;
+    min-width: 350px;
+    margin: 0 auto;
+}
+
+.img-responsive{
+    margin: 0 auto;
+}
+
+.logo-marpad{
+    margin-top: 40px;
+    padding-bottom: 80px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.form-group{
+    text-align: center;
+}
+
+.input-center{
+    margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+    .k-admin-view-btn{
+        margin-top: 30px;
+    }
+
+    .k-col-centered h3{
+        margin-top: 40px;
+    }
+
+    .k-border-right {
+        border-right: 1px solid #333;
+    }
+
+    .k-admin-formClass{
+        max-width: 90%;
+        min-width: 90%;
+        margin: 0 auto;
+    }
+
+    .k-admin-formClass button{
+        max-width: 100%;
+        min-width: 100%;
+        margin: 0 auto;
+    }
+
+    .k-view-user-form {
+        max-width: 90%;
+        min-width: 90%;
+        margin: 0 auto;
+    }
+
+    .k-view-user-form button{
+        max-width: 45%;
+        min-width: 45%;
+        margin: 0 auto;
+    }
+
+    .k-admin-user-register-btn{
+        margin-top: 178px !important;
+    }
+
+    .k-admin-race-register-btn{
+        margin-top: 227px !important;
+    }
+
+    .k-h1-view-user{
+        margin-bottom: 50px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .k-admin-formClass{
+        max-width: 350px;
+        min-width: 350px;
+        margin: 0 auto;
+    }
+
+    .k-admin-formClass button{
+        max-width: 350px;
+        min-width: 350px;
+        margin: 0 auto;
+    }
+
+    .k-view-user-form {
+        max-width: 350px;
+        min-width: 350px;
+        margin: 0 auto;
+    }
+
+    .k-view-user-form button{
+        max-width: 45%;
+        min-width: 45%;
+        margin: 0 auto;
+    }
+
+    .k-form-margin-top{
+        margin-top: 80px !important;
+    }
+
+    .k-h1-view-user{
+        margin-bottom: 0;
+    }
+}
+
+a {
+    color: #1A3278;
+}
+
+.navbar {
+    margin-bottom:0;
+}
+
+#logo{
+    height:100%;
+}
+
+#custom-bootstrap-menu.navbar-default .navbar-brand {
+    color: rgba(119, 119, 119, 1);
+    background-color: rgba(26, 40, 75, 1);
+}
+#custom-bootstrap-menu.navbar-default {
+    font-size: 16px;
+    background-color: rgba(26, 40, 75, 1);
+    border-width: 0px;
+    border-radius: 0px;
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(26, 40, 75, 1);
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:focus {
+    color: rgba(0, 0, 0, 1);
+    background-color: rgba(193, 209, 0, 1);
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus {
+    color: rgba(0, 0, 0, 1);
+    background-color: rgba(26, 40, 75, 1);
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle {
+    border-color: #1a284b;
+    background-color: rgba(26, 40, 75, 1); /*hmm*/
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus {
+    background-color: #C3CF01;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
+    background-color: #C3CF01;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #1a284b;
+}
+
+.k-custom-navbar-bg{
+    background-color: #1a284b;
+}
+
+.k-toggle-btn-bg{
+    background-color: #fff;
+}
+
+.k-login-btn{
+    background-color: rgba(193, 209, 0, 1);;
+}
+
+.k-del-btn{
+    background-color: #ff3232;
+}
+
+.k-col-centered{
+    /*float: none;
+    margin: 0 auto;*/
+    text-align: center;
+}
+
+.k-col-centered h1, h3{
+    color: #fff;
+}
+
+.k-admin-view-btn{
+    min-width:200px;
+}
+
+.k-admin-box{
+
+}
+
+.k-h1-view-user{
+    margin-left: 50px;
+    color: #fff;
+}
+
+.role-view-user{
+    min-width: 135px;
+    min-height: 26px;
+}
+
+/*Race Date Picker*/
+input[type="date"]:hover::-webkit-calendar-picker-indicator {
+    color: red;
+}
+input[type="date"]:hover:after {
+    content: " Date Picker ";
+    color: #555;
+    padding-right: 5px;
+}
+input[type="date"]::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0;
+}
